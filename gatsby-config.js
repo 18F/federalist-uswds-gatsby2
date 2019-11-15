@@ -1,16 +1,54 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    author: "Foo",
+    title: `Agency Name`,
+    description: `Agency Name (EAC) Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    Aenean et sapien a leo auctor scelerisque quis nec magna. Sed dictum ante a risus vehicula facilisis.`,
+    navigation: [
+      {
+        items: [{ text: "Home", link: "/" }],
+      },
+      {
+        items: [{ text: "Blog", link: "/blog" }],
+      },
+      {
+        items: [{ text: "Document", link: "/document" }],
+      },
+      {
+        items: [
+          { text: "Document with sidenav", link: "/document-with-sidenav" },
+        ],
+      },
+      {
+        title: "Document submenu",
+        items: [
+          { text: "Navigation link", link: "/" },
+          { text: "Navigation link", link: "/" },
+          { text: "Navigation link", link: "/" },
+        ],
+      },
+    ],
+    secondaryLinks: [
+      { text: "Secondary link", link: "/" },
+      { text: "Another secondary link", link: "/" },
+    ],
   },
   plugins: [
+    `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `posts`,
+        path: `${__dirname}/src/posts`,
       },
     },
     `gatsby-transformer-sharp`,
