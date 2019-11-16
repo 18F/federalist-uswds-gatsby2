@@ -5,7 +5,8 @@
  */
 
 // You can delete this file if you're not using it
-const path = require(`path`)
+const path = require("path")
+const { paginate } = require("gatsby-awesome-pagination")
 
 exports.createPages = async ({ actions, graphql }) => {
   const { createPage } = actions
@@ -27,10 +28,22 @@ exports.createPages = async ({ actions, graphql }) => {
     console.error(result.errors)
   }
 
-  result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+  const posts = result.data.allMarkdownRemark.edges
+
+  // Create your pagination index page
+  paginate({
+    createPage,
+    items: posts,
+    itemsPerPage: 3,
+    pathPrefix: "/blog",
+    component: path.resolve("./src/templates/blog.js"),
+  })
+
+  // Create individual pages
+  posts.forEach(({ node }) => {
     createPage({
       path: node.frontmatter.path,
-      component: path.resolve(`src/templates/post.js`),
+      component: path.resolve("./src/templates/post.js"),
     })
   })
 }
