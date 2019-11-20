@@ -6,7 +6,7 @@
  */
 
 import React from "react"
-
+import { Link } from "gatsby"
 /*
   The sidenav is not loaded by default on the main pages. To include this navigation you can
   add "sidenav: true" in the front-matter of your markdown pages
@@ -17,50 +17,50 @@ const Sidenav = () => (
     <nav>
       <ul className="usa-sidenav">
         <li className="usa-sidenav__item">
-          <a href="">Parent link</a>
+          <Link to="/">Parent link</Link>
         </li>
         <li className="usa-sidenav__item">
-          <a href="" className="usa-current">
+          <Link to="/" className="usa-current">
             Current page
-          </a>
+          </Link>
           <ul className="usa-sidenav__sublist">
             <li className="usa-sidenav__item">
-              <a href="">Child link</a>
+              <Link to="/">Child link</Link>
             </li>
             <li className="usa-sidenav__item">
-              <a href="" className="usa-current">
+              <Link to="/" className="usa-current">
                 Child link
-              </a>
+              </Link>
               <ul className="usa-sidenav__sublist">
                 <li className="usa-sidenav__item">
-                  <a href="">Grandchild link</a>
+                  <Link to="/">Grandchild link</Link>
                 </li>
                 <li className="usa-sidenav__item">
-                  <a href="">Grandchild link</a>
+                  <Link to="/">Grandchild link</Link>
                 </li>
                 <li className="usa-sidenav__item">
-                  <a href="" className="usa-current">
+                  <Link to="/" className="usa-current">
                     Grandchild link
-                  </a>
+                  </Link>
                 </li>
                 <li className="usa-sidenav__item">
-                  <a href="">Grandchild link</a>
+                  <Link to="/">Grandchild link</Link>
                 </li>
               </ul>
             </li>
             <li className="usa-sidenav__item">
-              <a href="">Child link</a>
+              <Link to="/">Child link</Link>
             </li>
             <li className="usa-sidenav__item">
-              <a href="">Child link</a>
+              <Link to="/">Child link</Link>
             </li>
             <li className="usa-sidenav__item">
-              <a href="">Child link</a>
+              <Link to="/">Child link</Link>
             </li>
           </ul>
         </li>
         <li className="usa-sidenav__item">
-          <a href="">Parent link</a>
+          <Link to="/">Parent link</Link>
         </li>
       </ul>
     </nav>

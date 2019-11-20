@@ -34,25 +34,9 @@ exports.createPages = async ({ actions, graphql }) => {
 }
 
 async function createBlogPages(createPage, graphql) {
-  const result = await graphql(`
-    {
-      allMarkdownRemark(filter: { fields: { sourceName: { eq: "posts" } } }) {
-        edges {
-          node {
-            frontmatter {
-              path
-            }
-          }
-        }
-      }
-    }
-  `)
-
-  if (result.errors) {
-    console.error(result.errors)
-  }
-
-  const posts = result.data.allMarkdownRemark.edges
+  const blogTemplate = path.resolve("./src/templates/blog.js")
+  const postTemplate = path.resolve("./src/templates/post.js")
+  const posts = await markdownQuery(graphql, "posts")
 
   // Create pagination index page
   paginate({
@@ -60,22 +44,34 @@ async function createBlogPages(createPage, graphql) {
     items: posts,
     itemsPerPage: 3,
     pathPrefix: "/blog",
-    component: path.resolve("./src/templates/blog.js"),
+    component: blogTemplate,
   })
 
   // Create individual pages
   posts.forEach(({ node }) => {
     createPage({
       path: node.frontmatter.path,
-      component: path.resolve("./src/templates/post.js"),
+      component: postTemplate,
     })
   })
 }
 
 async function createMarkdownPages(createPage, graphql) {
+  const pageTemplate = path.resolve("./src/templates/page.js")
+  const pages = await markdownQuery(graphql, "pages")
+
+  pages.forEach(({ node }) => {
+    createPage({
+      path: node.frontmatter.path,
+      component: pageTemplate,
+    })
+  })
+}
+
+async function markdownQuery(graphql, source) {
   const result = await graphql(`
     {
-      allMarkdownRemark(filter: { fields: { sourceName: { eq: "pages" } } }) {
+      allMarkdownRemark(filter: { fields: { sourceName: { eq: "${source}" } } }) {
         edges {
           node {
             frontmatter {
@@ -91,12 +87,5 @@ async function createMarkdownPages(createPage, graphql) {
     console.error(result.errors)
   }
 
-  const pages = result.data.allMarkdownRemark.edges
-
-  pages.forEach(({ node }) => {
-    createPage({
-      path: node.frontmatter.path,
-      component: path.resolve("./src/templates/page.js"),
-    })
-  })
+  return result.data.allMarkdownRemark.edges
 }
