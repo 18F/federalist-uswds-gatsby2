@@ -1,7 +1,7 @@
 ---
-title: Document
-path: /document
-sidenav: false
+title: Document with sidenav
+path: /document-with-sidenav
+sidenav: true
 ---
 
 # Section heading (h1)
