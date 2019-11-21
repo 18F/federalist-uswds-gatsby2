@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql, Link } from "gatsby"
+import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -16,13 +16,13 @@ const Page = ({ data }) => {
   return (
     <Layout>
       <SEO title={frontmatter.title} />
-      <div class="usa-layout-docs usa-section">
-        <div class="grid-container">
-          <div class="grid-row grid-gap">
+      <div className="usa-layout-docs usa-section">
+        <div className="grid-container">
+          <div className="grid-row grid-gap">
             {frontmatter.sidenav && <Sidenav />}
 
             <div
-              class="usa-layout-docs__main desktop:grid-col-9 usa-prose"
+              className="usa-layout-docs__main desktop:grid-col-9 usa-prose"
               dangerouslySetInnerHTML={{ __html: html }}
             ></div>
           </div>

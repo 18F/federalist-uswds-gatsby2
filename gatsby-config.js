@@ -32,6 +32,18 @@ module.exports = {
       { text: "Secondary link", link: "/" },
       { text: "Another secondary link", link: "/" },
     ],
+
+    // Search.gov configuration
+    //
+    // 1. Create an account with Search.gov https://search.usa.gov/signup
+    // 2. Add a new site.
+    // 3. Add your site/affiliate name here.
+    searchgov: {
+      endpoint: "https://search.usa.gov", // You should not change this.
+      affiliate: "federalist-uswds-example", // replace this with your search.gov account
+      access_key: "xX1gtb2RcnLbIYkHAcB6IaTRr4ZfN-p16ofcyUebeko=", // This is placeholder. Not private.
+      inline: false, // this renders the results on the same domain. Otherwise, it will render the results in the search.gov domain
+    },
   },
   plugins: [
     `gatsby-plugin-sass`,

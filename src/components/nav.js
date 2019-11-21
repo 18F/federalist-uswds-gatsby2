@@ -1,6 +1,8 @@
 import { Link } from "gatsby"
 import React from "react"
+
 import close from "../../node_modules/uswds/dist/img/close.svg"
+import SearchForm from "./search-form"
 
 const Nav = ({ navigation, secondaryLinks }) => (
   <nav role="navigation" className="usa-nav">
@@ -54,25 +56,7 @@ const Nav = ({ navigation, secondaryLinks }) => (
             </li>
           ))}
         </ul>
-        <form className="usa-search usa-search-small">
-          <div role="search">
-            <label
-              className="usa-sr-only"
-              htmlFor="extended-search-field-small"
-            >
-              Search
-            </label>
-            <input
-              className="usa-input"
-              id="extended-search-field-small"
-              type="search"
-              name="search"
-            />
-            <button className="usa-button" type="submit">
-              <span className="usa-sr-only">Search</span>
-            </button>
-          </div>
-        </form>
+        <SearchForm />
       </div>
     </div>
   </nav>

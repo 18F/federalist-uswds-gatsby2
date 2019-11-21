@@ -28,7 +28,10 @@ const Blog = ({ data, pageContext }) => {
           <div className="desktop:grid-col-8 usa-prose padding-right-4">
             {/* This loops through the paginated posts */}
             {posts.map(post => (
-              <div className="padding-bottom-5 margin-top-4 usa-prose border-bottom-05 border-base-lightest">
+              <div
+                key={post.title}
+                className="padding-bottom-5 margin-top-4 usa-prose border-bottom-05 border-base-lightest"
+              >
                 <h3 className="title">
                   <Link className="usa-link text-no-underline" to={post.path}>
                     {post.title}
@@ -98,7 +101,7 @@ const Blog = ({ data, pageContext }) => {
               <h4 className="">Most Recent Posts</h4>
               <ul className="usa-list usa-list--unstyled padding-top-2">
                 {posts.map(post => (
-                  <li className="padding-bottom-1">
+                  <li key={post.title} className="padding-bottom-1">
                     <Link className="usa-link" to={post.path}>
                       {post.title}
                     </Link>

@@ -13,8 +13,8 @@ const Post = ({ data }) => {
   return (
     <Layout>
       <SEO title={frontmatter.title} />
-      <div class="usa-layout-docs usa-section">
-        <div class="grid-container">
+      <div className="usa-layout-docs usa-section">
+        <div className="grid-container">
           <div className="grid-row grid-gap">
             <div className="usa-layout-docs__main desktop:grid-col-9 usa-prose">
               <h1 className="title">{frontmatter.title}</h1>
