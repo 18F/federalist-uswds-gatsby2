@@ -1,12 +1,6 @@
-/**
- * SEO component that queries for data with
- *  Gatsby's useStaticQuery React hook
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
 import React from "react"
 import { Link } from "gatsby"
+
 /*
   The sidenav is not loaded by default on the main pages. To include this navigation you can
   add "sidenav: true" in the front-matter of your markdown pages

@@ -3,17 +3,17 @@ import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 
-const SearchPage = ({ data }) => {
+const SearchPage = ({ data, location }) => {
   const { access_key, affiliate, endpoint } = data.site.siteMetadata.searchgov
+  const query = new URLSearchParams(location.search).get("query")
 
   const [results, setResults] = useState([])
 
   useEffect(() => {
-    const urlParams = new URLSearchParams(window.location.search)
     const searchEndpoint = new URL(`${endpoint}/api/v2/search/i14y`)
     searchEndpoint.searchParams.append("affiliate", affiliate)
     searchEndpoint.searchParams.append("access_key", access_key)
-    searchEndpoint.searchParams.append("query", urlParams.get("query"))
+    searchEndpoint.searchParams.append("query", query)
 
     fetch(searchEndpoint)
       .then(r => {
@@ -26,7 +26,7 @@ const SearchPage = ({ data }) => {
         setResults(posts.web.results)
       })
       .catch(err => console.log(err))
-  }, [access_key, affiliate, endpoint])
+  }, [query, access_key, affiliate, endpoint])
 
   return (
     <Layout>
@@ -37,7 +37,7 @@ const SearchPage = ({ data }) => {
               <h1>Search Results</h1>
 
               {results.length > 0 ? (
-                <ol id="search-results">
+                <ol>
                   {results.map((r, idx) => (
                     <li
                       key={idx}
@@ -58,7 +58,9 @@ const SearchPage = ({ data }) => {
                   ))}
                 </ol>
               ) : (
-                <h4 className="title">No results found</h4>
+                <h4 className="title">
+                  No results found for search term: {query}
+                </h4>
               )}
 
               {affiliate === "federalist-uswds-example" && (

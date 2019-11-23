@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
+
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
@@ -8,7 +9,7 @@ import SEO from "../components/seo"
 */
 
 const Post = ({ data }) => {
-  const { markdownRemark } = data // data.markdownRemark holds your post data
+  const { markdownRemark } = data
   const { frontmatter, html } = markdownRemark
   return (
     <Layout>
