@@ -7,6 +7,7 @@ const SearchForm = ({ navigation, secondaryLinks }) => {
     graphql`
       query {
         site {
+          pathPrefix
           siteMetadata {
             searchgov {
               affiliate
@@ -24,7 +25,7 @@ const SearchForm = ({ navigation, secondaryLinks }) => {
     e.preventDefault()
     const query = e.currentTarget.query.value
     if (inline) {
-      navigate(`/search?query=${query}`)
+      navigate(`${site.pathPrefix}search?query=${query}`)
     } else {
       window.location.replace(
         `${endpoint}/search?utf8=✓&affiliate=${affiliate}&query=${query}`
