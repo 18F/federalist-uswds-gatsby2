@@ -80,7 +80,7 @@ const SearchPage = ({ data, location }) => {
                         Go to the "Activate" section and get "API Access Key"
                       </li>
                       <li>
-                        Open <code>_config.yml</code> and look for{" "}
+                        Open <code>gatsby-config.js</code> and look for{" "}
                         <code>searchgov</code> fields
                       </li>
                       <li>
