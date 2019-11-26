@@ -2,7 +2,10 @@
   "name": "federalist-uswds-gatsby2",
   "description": "A Federalist template using USWDS 2.0 + Gatsby",
   "version": "0.1.0",
-  "author": "David Corwin <david.corwin@gsa.gov>",
+  "author": "Federalist",
+  "contributors": [
+    "David Corwin <david.corwin@gsa.gov>"
+  ],
   "dependencies": {
     "gatsby": "^2.17.11",
     "gatsby-awesome-pagination": "^0.3.5",
@@ -20,13 +23,17 @@
     "uswds": "^2.2.1"
   },
   "devDependencies": {
-    "prettier": "^1.19.1"
+    "prettier": "^1.19.1",
+    "rimraf": "^3.0.0"
   },
   "keywords": [
-    "gatsby"
+    "gatsby",
+    "federalist",
+    "uswds"
   ],
-  "license": "MIT",
+  "license": "CC0-1.0",
   "scripts": {
+    "clean": "rimraf .cache public",
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
@@ -39,5 +46,8 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/18F/federalist-uswds-gatsby2"
+  },
+  "bugs": {
+    "url": "https://github.com/18F/federalist-uswds-gatsby2/issues"
   }
 }
