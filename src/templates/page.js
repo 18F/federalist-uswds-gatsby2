@@ -1,17 +1,17 @@
-import React from "react"
-import { graphql } from "gatsby"
+import React from 'react';
+import { graphql } from 'gatsby';
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import Sidenav from "../components/sidenav"
+import Layout from '../components/layout';
+import SEO from '../components/seo';
+import Sidenav from '../components/sidenav';
 
 /*
   This template is for a single page that does not have a date associated with it. For example, an about page.
 */
 
 const Page = ({ data }) => {
-  const { markdownRemark } = data
-  const { frontmatter, html } = markdownRemark
+  const { markdownRemark } = data;
+  const { frontmatter, html } = markdownRemark;
 
   return (
     <Layout>
@@ -29,8 +29,8 @@ const Page = ({ data }) => {
         </div>
       </div>
     </Layout>
-  )
-}
+  );
+};
 
 export const pageQuery = graphql`
   query($path: String!) {
@@ -45,6 +45,6 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
 
-export default Page
+export default Page;

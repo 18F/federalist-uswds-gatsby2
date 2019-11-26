@@ -1,6 +1,6 @@
-import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import { navigate } from "@reach/router"
+import React from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
+import { navigate } from '@reach/router';
 
 const SearchForm = ({ navigation, secondaryLinks }) => {
   const { site } = useStaticQuery(
@@ -18,20 +18,20 @@ const SearchForm = ({ navigation, secondaryLinks }) => {
         }
       }
     `
-  )
-  const { affiliate, endpoint, inline } = site.siteMetadata.searchgov
+  );
+  const { affiliate, endpoint, inline } = site.siteMetadata.searchgov;
 
   const handleSubmit = e => {
-    e.preventDefault()
-    const query = e.currentTarget.query.value
+    e.preventDefault();
+    const query = e.currentTarget.query.value;
     if (inline) {
-      navigate(`${site.pathPrefix}/search?query=${query}`)
+      navigate(`${site.pathPrefix}/search?query=${query}`);
     } else {
       window.location.replace(
         `${endpoint}/search?utf8=✓&affiliate=${affiliate}&query=${query}`
-      )
+      );
     }
-  }
+  };
 
   return (
     <form className="usa-search usa-search-small" onSubmit={handleSubmit}>
@@ -51,7 +51,7 @@ const SearchForm = ({ navigation, secondaryLinks }) => {
         </button>
       </div>
     </form>
-  )
-}
+  );
+};
 
-export default SearchForm
+export default SearchForm;

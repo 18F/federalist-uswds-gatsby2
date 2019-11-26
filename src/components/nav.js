@@ -1,8 +1,8 @@
-import { Link } from "gatsby"
-import React from "react"
+import { Link } from 'gatsby';
+import React from 'react';
 
-import close from "../../node_modules/uswds/dist/img/close.svg"
-import SearchForm from "./search-form"
+import close from '../../node_modules/uswds/dist/img/close.svg';
+import SearchForm from './search-form';
 
 const Nav = ({ navigation, secondaryLinks }) => (
   <nav role="navigation" className="usa-nav">
@@ -17,7 +17,7 @@ const Nav = ({ navigation, secondaryLinks }) => (
               <>
                 <button
                   className={`usa-accordion__button usa-nav__link ${
-                    idx === 0 ? "usa-current" : ""
+                    idx === 0 ? 'usa-current' : ''
                   }`}
                   aria-controls={`extended-nav-section-${idx}`}
                   aria-expanded={false}
@@ -60,6 +60,6 @@ const Nav = ({ navigation, secondaryLinks }) => (
       </div>
     </div>
   </nav>
-)
+);
 
-export default Nav
+export default Nav;

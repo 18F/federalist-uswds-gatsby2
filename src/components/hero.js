@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react';
 
 /*
   This will be displayed on the homepage. Ideally, you want to highlight key goals of the website
@@ -22,6 +22,6 @@ const Hero = () => (
       </div>
     </div>
   </section>
-)
+);
 
-export default Hero
+export default Hero;

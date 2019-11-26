@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react';
 
 /*
   This tagline will appear in your homepage
@@ -28,6 +28,6 @@ const Tagline = () => (
       </div>
     </div>
   </section>
-)
+);
 
-export default Tagline
+export default Tagline;

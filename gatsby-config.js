@@ -1,36 +1,36 @@
 module.exports = {
   siteMetadata: {
-    author: "Foo",
+    author: 'Foo',
     title: `Agency Name`,
     description: `Agency Name (EAC) Lorem ipsum dolor sit amet, consectetur adipiscing elit.
     Aenean et sapien a leo auctor scelerisque quis nec magna. Sed dictum ante a risus vehicula facilisis.`,
     navigation: [
       {
-        items: [{ text: "Home", link: "/" }],
+        items: [{ text: 'Home', link: '/' }],
       },
       {
-        items: [{ text: "Blog", link: "/blog" }],
+        items: [{ text: 'Blog', link: '/blog' }],
       },
       {
-        items: [{ text: "Document", link: "/document" }],
+        items: [{ text: 'Document', link: '/document' }],
       },
       {
         items: [
-          { text: "Document with sidenav", link: "/document-with-sidenav" },
+          { text: 'Document with sidenav', link: '/document-with-sidenav' },
         ],
       },
       {
-        title: "Document submenu",
+        title: 'Document submenu',
         items: [
-          { text: "Navigation link", link: "/" },
-          { text: "Navigation link", link: "/" },
-          { text: "Navigation link", link: "/" },
+          { text: 'Navigation link', link: '/' },
+          { text: 'Navigation link', link: '/' },
+          { text: 'Navigation link', link: '/' },
         ],
       },
     ],
     secondaryLinks: [
-      { text: "Secondary link", link: "/" },
-      { text: "Another secondary link", link: "/" },
+      { text: 'Secondary link', link: '/' },
+      { text: 'Another secondary link', link: '/' },
     ],
 
     // Search.gov configuration
@@ -39,14 +39,14 @@ module.exports = {
     // 2. Add a new site.
     // 3. Add your site/affiliate name here.
     searchgov: {
-      endpoint: "https://search.usa.gov", // You should not change this.
-      affiliate: "federalist-uswds-example", // replace this with your search.gov account
-      access_key: "xX1gtb2RcnLbIYkHAcB6IaTRr4ZfN-p16ofcyUebeko=", // This is placeholder. Not private.
+      endpoint: 'https://search.usa.gov', // You should not change this.
+      affiliate: 'federalist-uswds-example', // replace this with your search.gov account
+      access_key: 'xX1gtb2RcnLbIYkHAcB6IaTRr4ZfN-p16ofcyUebeko=', // This is placeholder. Not private.
       inline: true, // this renders the results on the same domain. Otherwise, it will render the results in the search.gov domain
     },
-    dapAgency: "GSA",
+    dapAgency: 'GSA',
   },
-  pathPrefix: process.env.BASEURL || "/",
+  pathPrefix: process.env.BASEURL || '/',
   plugins: [
     `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
@@ -72,8 +72,6 @@ module.exports = {
       },
     },
     `gatsby-transformer-remark`,
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -90,4 +88,4 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
-}
+};

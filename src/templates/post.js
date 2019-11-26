@@ -1,16 +1,16 @@
-import React from "react"
-import { graphql } from "gatsby"
+import React from 'react';
+import { graphql } from 'gatsby';
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Layout from '../components/layout';
+import SEO from '../components/seo';
 
 /*
   This is used in blog posts. The index page can be found at src/pages/blog.js
 */
 
 const Post = ({ data }) => {
-  const { markdownRemark } = data
-  const { frontmatter, html } = markdownRemark
+  const { markdownRemark } = data;
+  const { frontmatter, html } = markdownRemark;
   return (
     <Layout>
       <SEO title={frontmatter.title} />
@@ -21,7 +21,7 @@ const Post = ({ data }) => {
               <h1 className="title">{frontmatter.title}</h1>
               <div className="text-base margin-bottom-2">
                 <div className="margin-top-neg-105">
-                  By <span className="text-bold">{frontmatter.author}</span> ·{" "}
+                  By <span className="text-bold">{frontmatter.author}</span> ·{' '}
                   {frontmatter.date}
                 </div>
                 <span dangerouslySetInnerHTML={{ __html: html }} />
@@ -31,8 +31,8 @@ const Post = ({ data }) => {
         </div>
       </div>
     </Layout>
-  )
-}
+  );
+};
 
 export const pageQuery = graphql`
   query($path: String!) {
@@ -49,6 +49,6 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
 
-export default Post
+export default Post;

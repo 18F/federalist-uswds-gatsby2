@@ -1,14 +1,14 @@
-import React from "react"
-import { graphql, Link } from "gatsby"
+import React from 'react';
+import { graphql, Link } from 'gatsby';
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Layout from '../components/layout';
+import SEO from '../components/seo';
 
 const Blog = ({ data, pageContext }) => {
   const posts = data.allMarkdownRemark.edges.map(({ node }) => ({
     html: node.html,
     ...node.frontmatter,
-  }))
+  }));
   return (
     <Layout>
       <SEO title="Blog" />
@@ -39,7 +39,7 @@ const Blog = ({ data, pageContext }) => {
                 </h3>
                 <div className="text-base margin-bottom-2">
                   <div className="margin-top-neg-105">
-                    By <span className="text-bold">{post.author}</span> ·{" "}
+                    By <span className="text-bold">{post.author}</span> ·{' '}
                     {post.date}
                   </div>
                 </div>
@@ -55,7 +55,7 @@ const Blog = ({ data, pageContext }) => {
             {/* Pagination links */}
             <div className="grid-row padding-top-2">
               <div className="tablet:grid-col-4 text-center tablet:order-2 font-body-xs text-base">
-                Page {pageContext.humanPageNumber} of{" "}
+                Page {pageContext.humanPageNumber} of{' '}
                 {pageContext.numberOfPages}
               </div>
               <div className="tablet:grid-col-4 text-right tablet:order-3">
@@ -144,7 +144,7 @@ const Blog = ({ data, pageContext }) => {
               <ul className="usa-list usa-list--unstyled padding-top-2">
                 <li className="padding-bottom-1">
                   <svg
-                    style={{ verticalAlign: "middle" }}
+                    style={{ verticalAlign: 'middle' }}
                     aria-hidden="true"
                     focusable="false"
                     data-prefix="fab"
@@ -165,7 +165,7 @@ const Blog = ({ data, pageContext }) => {
                 </li>
                 <li className="padding-bottom-1">
                   <svg
-                    style={{ verticalAlign: "middle" }}
+                    style={{ verticalAlign: 'middle' }}
                     aria-hidden="true"
                     focusable="false"
                     data-prefix="fab"
@@ -186,7 +186,7 @@ const Blog = ({ data, pageContext }) => {
                 </li>
                 <li className="padding-bottom-1">
                   <svg
-                    style={{ verticalAlign: "middle" }}
+                    style={{ verticalAlign: 'middle' }}
                     aria-hidden="true"
                     focusable="false"
                     data-prefix="fas"
@@ -216,8 +216,8 @@ const Blog = ({ data, pageContext }) => {
         </div>
       </div>
     </Layout>
-  )
-}
+  );
+};
 
 export const pageQuery = graphql`
   query($skip: Int!, $limit: Int!) {
@@ -240,6 +240,6 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
 
-export default Blog
+export default Blog;
