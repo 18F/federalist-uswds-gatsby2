@@ -1,0 +1,40 @@
+backend:
+  name: github
+  repo: 18f/federalist-uswds-gatsby2
+  base_url: https://federalistapp-staging.18f.gov
+  auth_endpoint: external/auth/github
+  branch: master
+  use_graphql: true
+  preview_context: federalist/build
+
+media_folder: static/images
+public_folder: /images
+publish_mode: editorial_workflow
+logo_url: https://federalist.18f.gov/assets/images/federalist-logo.png
+site_url: https://federalist.18f.gov
+
+collections:
+  - name: blog
+    label: Blog
+    folder: src/posts
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Path', name: 'path', widget: 'string' }
+      - { label: 'Date', name: 'date', widget: 'datetime' }
+      - { label: 'Author', name: 'author', widget: 'string' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
+
+  - name: documentation
+    label: Documentation
+    folder: src/md-pages
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Path', name: 'path', widget: 'string' }
+      - { label: 'Sidenav', name: 'sidenav', widget: 'boolean' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
