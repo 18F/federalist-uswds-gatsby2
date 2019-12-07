@@ -3,7 +3,7 @@ backend:
   repo: 18f/federalist-uswds-gatsby2
   base_url: https://federalistapp-staging.18f.gov
   auth_endpoint: external/auth/github
-  branch: dc/add-netlify-cms
+  branch: master
   use_graphql: true
   preview_context: federalist/build
 
