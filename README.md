@@ -48,7 +48,7 @@ The logic for using Search.gov can be found in the `src/components/search-form.j
 dapAgency: 'GSA',
 ```
 
-✅ Out-of-the-box performant caching strategy following [Gatsby recommended practices](https://www.gatsbyjs.org/docs/caching/) via `federalist-json`. See [Federalist Documentation](https://federalist.18f.gov/documentation/) for more information on `federalist-json`.
+✅ Out-of-the-box performant caching strategy following [Gatsby recommended practices](https://www.gatsbyjs.org/docs/caching/) via `federalist.json`. See [Federalist Documentation](https://federalist.18f.gov/documentation/) for more information on `federalist.json`.
 
 ## Installation
 
