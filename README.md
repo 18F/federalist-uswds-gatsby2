@@ -50,20 +50,35 @@ dapAgency: 'GSA',
 
 ✅ Out-of-the-box performant caching strategy following [Gatsby recommended practices](https://www.gatsbyjs.org/docs/caching/) via `federalist.json`. See [Federalist Documentation](https://federalist.18f.gov/documentation/) for more information on `federalist.json`.
 
-## Installation
+## Getting Started
 
-Clone the repository.
+### Installation as a starter
 
-    $ `git clone https://github.com/18F/federalist-uswds-gatsby2`
-    $ `cd federalist-uswds-gatsby2`
+#### With `npx`
 
-Install the Node.js dependencies.
+The simplest way to create your own repository based on this starter is to use `npx` (included with `node`) with `degit`.
 
-    $ `npm install`
+    $ npx degit https://github.com/18F/federalist-uswds-gatsby2 <destination-folder>
+    $ cd <destination-folder>
+    $ git init
 
-Run the site locally.
+#### With `git`
 
-    $ `npm run develop`
+    $ git clone --depth 1 https://github.com/18F/federalist-uswds-gatsby2 <destination-folder>
+    $ cd <destination-folder>
+    $ npm run reset
+    $ git init
+
+### Installation for development
+
+    $ git clone https://github.com/18F/federalist-uswds-gatsby2
+    $ cd federalist-uswds-gatsby2
+
+### Install dependencies and run app
+
+    $ npm install
+    $ bundle install
+    $ npm run develop
 
 Open your web browser to [localhost:8000](http://localhost:8000/) to view your
 site.

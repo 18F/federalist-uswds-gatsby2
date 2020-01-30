@@ -1,11 +1,19 @@
 {
   "name": "federalist-uswds-gatsby2",
   "description": "A Federalist template using USWDS 2.0 + Gatsby",
-  "version": "0.1.0",
-  "author": "Federalist",
-  "contributors": [
-    "David Corwin <david.corwin@gsa.gov>"
-  ],
+  "version": "1.0.0",
+  "scripts": {
+    "clean": "rimraf .cache public _site",
+    "build": "gatsby build",
+    "reset": "npx rimraf package-lock.json LICENSE.md CONTRIBUTING.md degit.json .git",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "federalist": "npm run federalist:build && npm run federalist:copy",
+    "federalist:build": "gatsby build --prefix-paths",
+    "federalist:copy": "mkdir -p _site && rm -rf _site/* && cp -r public/* _site/"
+  },  
   "dependencies": {
     "gatsby": "^2.17.11",
     "gatsby-awesome-pagination": "^0.3.5",
@@ -25,29 +33,5 @@
   "devDependencies": {
     "prettier": "^1.19.1",
     "rimraf": "^3.0.0"
-  },
-  "keywords": [
-    "gatsby",
-    "federalist",
-    "uswds"
-  ],
-  "license": "CC0-1.0",
-  "scripts": {
-    "clean": "rimraf .cache public _site",
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
-    "start": "npm run develop",
-    "serve": "gatsby serve",
-    "federalist": "npm run federalist:build && npm run federalist:copy",
-    "federalist:build": "gatsby build --prefix-paths",
-    "federalist:copy": "mkdir -p _site && rm -rf _site/* && cp -r public/* _site/"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/18F/federalist-uswds-gatsby2"
-  },
-  "bugs": {
-    "url": "https://github.com/18F/federalist-uswds-gatsby2/issues"
   }
 }
