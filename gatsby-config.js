@@ -60,15 +60,15 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `posts`,
-        path: `${__dirname}/src/posts`,
+        name: `blog-posts`,
+        path: `${__dirname}/src/blog-posts`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `pages`,
-        path: `${__dirname}/src/md-pages`,
+        name: `documentation-pages`,
+        path: `${__dirname}/src/documentation-pages`,
       },
     },
     `gatsby-transformer-remark`,

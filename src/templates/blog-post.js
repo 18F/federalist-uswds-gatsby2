@@ -8,7 +8,7 @@ import SEO from '../components/seo';
   This is used in blog posts. The index page can be found at src/pages/blog.js
 */
 
-const Post = ({ data }) => {
+const BlogPost = ({ data }) => {
   const { markdownRemark } = data;
   const { frontmatter, html } = markdownRemark;
   return (
@@ -37,7 +37,7 @@ const Post = ({ data }) => {
 export const pageQuery = graphql`
   query($path: String!) {
     markdownRemark(
-      fields: { sourceName: { eq: "posts" } }
+      fields: { sourceName: { eq: "blog-posts" } }
       frontmatter: { path: { eq: $path } }
     ) {
       html
@@ -51,4 +51,4 @@ export const pageQuery = graphql`
   }
 `;
 
-export default Post;
+export default BlogPost;

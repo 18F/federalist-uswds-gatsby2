@@ -13,7 +13,7 @@
     "federalist": "npm run federalist:build && npm run federalist:copy",
     "federalist:build": "gatsby build --prefix-paths",
     "federalist:copy": "mkdir -p _site && rm -rf _site/* && cp -r public/* _site/"
-  },  
+  },
   "dependencies": {
     "gatsby": "^2.17.11",
     "gatsby-awesome-pagination": "^0.3.5",
