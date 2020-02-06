@@ -15,23 +15,23 @@
     "federalist:copy": "mkdir -p _site && rm -rf _site/* && cp -r public/* _site/"
   },
   "dependencies": {
-    "gatsby": "^2.17.11",
+    "gatsby": "^2.19.12",
     "gatsby-awesome-pagination": "^0.3.5",
-    "gatsby-plugin-manifest": "^2.2.27",
-    "gatsby-plugin-offline": "^3.0.19",
-    "gatsby-plugin-react-helmet": "^3.1.14",
-    "gatsby-plugin-sass": "^2.1.22",
-    "gatsby-source-filesystem": "^2.1.36",
-    "gatsby-transformer-remark": "^2.6.35",
-    "node-sass": "^4.13.0",
+    "gatsby-plugin-manifest": "^2.2.41",
+    "gatsby-plugin-offline": "^3.0.34",
+    "gatsby-plugin-react-helmet": "^3.1.22",
+    "gatsby-plugin-sass": "^2.1.28",
+    "gatsby-source-filesystem": "^2.1.48",
+    "gatsby-transformer-remark": "^2.6.50",
+    "node-sass": "^4.13.1",
     "prop-types": "^15.7.2",
-    "react": "^16.11.0",
-    "react-dom": "^16.11.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
     "react-helmet": "^5.2.1",
-    "uswds": "^2.2.1"
+    "uswds": "^2.4.0"
   },
   "devDependencies": {
     "prettier": "^1.19.1",
-    "rimraf": "^3.0.0"
+    "rimraf": "^3.0.1"
   }
 }
